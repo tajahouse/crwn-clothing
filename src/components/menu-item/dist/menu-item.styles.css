@@ -7,6 +7,8 @@
   justify-content: center;
   border: 1px solid black;
   margin: 0 7.5px 15px;
+  background-position: center;
+  background-size: cover;
 }
 
 .menu-item:first-child {
@@ -24,14 +26,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid #faf7f7;
+  background-color: rgba(243, 232, 232, 0.6);
 }
 
 .menu-item .content .title {
   font-weight: bold;
   margin-bottom: 6px;
   font-size: 22px;
-  color: #4a4a4a;
+  color: #721de1;
 }
 
 .menu-item .content .subtitle {
