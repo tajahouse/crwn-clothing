@@ -1,4 +1,6 @@
 import React from "react";
+import "../menu-item/menu-item.styles.scss"
+
 
 const MenuItem =({ title })=>(
     <div className="menu-item">
@@ -8,3 +10,5 @@ const MenuItem =({ title })=>(
     </div>
 </div>
 )
+
+export default MenuItem;
