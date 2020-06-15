@@ -8,7 +8,7 @@ import SignInAndSignUp from './pages/sign-in-sign-up/sign-in-sign-up.component';
 
 
   const HatsPage = (props) =>{
-    console.log(props)
+    // console.log(props)
     return(
         <div>
       <h1>Hats Page</h1>
