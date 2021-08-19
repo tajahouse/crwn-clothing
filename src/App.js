@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Link, Route, Switch} from "react-router-dom";
+import {Link, Route, Switch, Redirect} from "react-router-dom";
 import './App.css';
 import firebase from './'
 import HomePage from "./pages/homepage/homepage.component";
@@ -55,15 +55,19 @@ class App extends React.Component {
         <Route path="/hats" component={HatsPage} />
         <Route path="/shop" component={ShopPage} />
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/signIn" component={SignInAndSignUp} />
+        <Route exact path="/signIn" render={() => this.props.currentUser ? (<Redirect to ='/' />) : (<SignInAndSignUp/>)} />
       </Switch>   
     </div>
   )
 }
 }
 
+const mapStateToProps = ({ user }) =>({
+  currentUser: user.currentUser
+})
+
 const mapDispatchToProps = dispatch =>({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 })
 
-export default connect(null, mapDispatchToProps )(App);
+export default connect(mapStateToProps, mapDispatchToProps )(App);
